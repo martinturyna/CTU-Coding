@@ -1,0 +1,22 @@
+Task 3 - EN - Gobblet
+(description of the game from boardgamegeek.com)
+
+Gobblet is an abstract game played on a 4×4 grid with each of the two players having twelve pieces that can nest on top of one another to create three stacks of four pieces.
+
+Your goal in Gobblet is to place four of your pieces in a horizontal, vertical or diagonal row. Your pieces start nested off the board. On a turn, you either play one exposed piece from your three off-the-board piles or move one piece on the board to any other spot on the board where it fits. A larger piece can cover any smaller piece. A piece being played from off the board may not cover an opponent's piece unless it's in a row where your opponent has three of his color.
+
+Your memory is tested as you try to remember which color one of your larger pieces is covering before you move it. As soon as a player has four like-colored pieces in a row, he wins — except in one case: If you lift your piece and reveal an opponent's piece that finishes a four-in-a-row, you don't immediately lose; you can't return the piece to its starting location, but if you can place it over one of the opponent's three other pieces in that row, the game continues.
+
+Assignment
+Input: You will be given two classes that define the game Gobblet – Board.java that contains the representation of the states, generates possible moves for a given state, provides heuristic evaluation function for non-terminal states, etc. Move.java is a class that defines moves in the game. Using these two classes, you are able to implement an algorithm for solving Gobblet games and finding optimal strategies.
+
+The goal of the assignment is to implement Alpha-Beta pruning algorithm or one of its variants (e.g., Negascout). Your algorithm will be given a state and desired number of moves the players can execute (depth), and the task of the algorithm is to compute value of the game given these parameters and using the evaluation function specified in Board.java.
+
+The main goal is to create as effective algorithm as possible. The effectiveness of the algorithm is primarily measured by the number of evaluated nodes – nodes that the algorithm opens. Note, that for Negascout this number includes repeated visits.
+
+Hints
+
+Do not create your own heuristic evaluation functions for Gobblet – this is not the point. Use the resources that you already have.
+Recall what factors can speed-up Alpha-Beta algorithm and implement such improvements using available methods from Board.java (chaching visited states and sorting nodes to evaluate)
+Take good care your code does not overflow/underflow integers (Integer.MAX_VALUE+1 / Integer.MIN_VALUE-1)
+Output: Value of the game. (Your algorithm is given a state and a depth and returns the value of the game).

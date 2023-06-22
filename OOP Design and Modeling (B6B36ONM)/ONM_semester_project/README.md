@@ -1,0 +1,1 @@
+Semester project for ONM created in group of three students (Martin Turyna, Csaba Filip and Štěpán Otta)

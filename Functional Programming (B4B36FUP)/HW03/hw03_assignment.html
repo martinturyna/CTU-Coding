@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0079)https://cw.felk.cvut.cz/courses/a4b33flp/task.php?task=automatic_code_synthesis -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="cache-control" content="no-cache">
+  <link rel="stylesheet" type="text/css" href="./hw03_assignment_files/default.css">
+  <title>Zad�n� �lohy z A4B33FLP</title>
+</head>
+<div><template shadowrootmode="open"><style>.skip-silence-bar{all:initial;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#fff;max-height:25px;background:#293033;border-radius:25px;align-items:center;padding:8px 8px 8px 20px;font-family:Poppins,sans-serif;animation:animate-in-command-bar .5s;display:flex;position:fixed;bottom:1rem;right:1rem}.skip-silence-bar .bar-text{align-items:center;display:flex}.skip-silence-bar .info{text-decoration:underline;color:#565656!important}.skip-silence-bar .speed-setting{display:flex}.skip-silence-bar .speed-setting label{white-space:nowrap;align-items:center;margin-right:5px;display:flex}.skip-silence-bar .slider-setting .setting-info{align-items:center;margin-top:0;display:flex}.skip-silence-bar .slider-setting input{display:none}@keyframes animate-in-command-bar{0%{opacity:0}}.skip-silence-bar-collapsed{color:#fff;width:40px;height:40px;cursor:pointer;background:#293033;border-radius:50%;justify-content:center;align-items:center;animation:animate-in-command-collapsed .5s;display:flex;position:fixed;bottom:1rem;right:1rem}@keyframes animate-in-command-collapsed{0%{opacity:0}}.skip-silence-bar,.skip-silence-bar-collapsed{z-index:100000}@font-face{font-family:Poppins;font-style:normal;font-display:swap;font-weight:400;src:url(poppins-devanagari-400-normal.20fc2635.woff2)format("woff2"),url(poppins-all-400-normal.0298587e.woff)format("woff");unicode-range:U+900-97F,U+1CD0-1CF6,U+1CF8-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FB}@font-face{font-family:Poppins;font-style:normal;font-display:swap;font-weight:400;src:url(poppins-latin-ext-400-normal.9f87e1a8.woff2)format("woff2"),url(poppins-all-400-normal.0298587e.woff)format("woff");unicode-range:U+100-24F,U+259,U+1E??,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Poppins;font-style:normal;font-display:swap;font-weight:400;src:url(poppins-latin-400-normal.53f07e8c.woff2)format("woff2"),url(poppins-all-400-normal.0298587e.woff)format("woff");unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-display:swap;font-weight:600;src:url(poppins-devanagari-600-normal.5b72b0b7.woff2)format("woff2"),url(poppins-all-600-normal.29420735.woff)format("woff");unicode-range:U+900-97F,U+1CD0-1CF6,U+1CF8-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FB}@font-face{font-family:Poppins;font-style:normal;font-display:swap;font-weight:600;src:url(poppins-latin-ext-600-normal.472ef062.woff2)format("woff2"),url(poppins-all-600-normal.29420735.woff)format("woff");unicode-range:U+100-24F,U+259,U+1E??,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Poppins;font-style:normal;font-display:swap;font-weight:600;src:url(poppins-latin-600-normal.15391d77.woff2)format("woff2"),url(poppins-all-600-normal.29420735.woff)format("woff");unicode-range:U+??,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.skip-silence-bar .header{justify-content:center;align-items:center;margin-left:15px;display:flex}.skip-silence-bar{all:initial;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#fff;max-height:25px;background:#293033;border-radius:25px;align-items:center;padding:8px 8px 8px 20px;font-family:Poppins,sans-serif;animation:animate-in-command-bar .5s;display:flex;position:fixed;bottom:1rem;right:1rem}.skip-silence-bar .bar-text{align-items:center;display:flex}.skip-silence-bar .info{text-decoration:underline;color:#565656!important}.skip-silence-bar .speed-setting{display:flex}.skip-silence-bar .speed-setting label{white-space:nowrap;align-items:center;margin-right:5px;display:flex}.skip-silence-bar .slider-setting .setting-info{align-items:center;margin-top:0;display:flex}.skip-silence-bar .slider-setting input{display:none}.skip-silence-bar-collapsed{color:#fff;width:40px;height:40px;cursor:pointer;background:#293033;border-radius:50%;justify-content:center;align-items:center;animation:animate-in-command-collapsed .5s;display:flex;position:fixed;bottom:1rem;right:1rem}.skip-silence-bar,.skip-silence-bar-collapsed{z-index:100000}</style><div id="plasmo-shadow-container" style="z-index: 1; position: absolute;"><div id="plasmo-mount-container" style="display: flex; position: relative; top: 0px; left: 0px;"></div></div></template></div><body>
+
+
+<div class="main">
+<h2>Automatic Code Synthesis</h2>
+<p>
+The third Scheme assignment is to complete the automatic code synthesis framework using the population evaluation function from Assignment 2 as your solution quality evaluator. The task is to write a function, which searches for the best program that performs a task given as pairs of the initial and the desired state of the maze. The ideal program would transform all the initial states to the desired states in the minimal number of steps.</p>
+
+<h3>Input</h3>
+<p><tt>
+(evolve &lt;pairs&gt; &lt;threshold&gt; &lt;stack_size&gt;)  
+</tt> where</p>
+<dl>
+<dt><tt>&lt;pairs&gt;</tt></dt><dd>is a list of pairs of states, including the position and the orientation of the robot;</dd>
+<dt><tt>&lt;threshold&gt;</tt></dt><dd>is lower bounds on the quality of the program in order to appear in the output;</dd>
+<dt><tt>&lt;stack_size&gt;</tt></dt><dd>is the limit on the robot simulator stack size (see Assignment 2).</dd>
+</dl>
+
+<p>
+The inputs are exactly the same as in Assignment 2, with the exception of missing list of programs.
+</p>
+
+<h3>Output</h3>
+<p>
+<tt>(&lt;value&gt; &lt;program&gt;)</tt> where
+</p>
+<dl>
+<dt><tt>&lt;value&gt;</tt></dt><dd>is the value of the output program in the sense of Assignment 2;</dd>
+<dt><tt>&lt;program&gt;</tt></dt><dd>is the best program found for the given task;</dd>
+</dl>
+<p>
+The output is <b>NOT the regular output</b> of the function. Your function will be executed for a specific amount of time and then killed by the system. The output used by the system for evaluation will be the last line of the standard output produced by your program. Hence, you should always output the best found solution using display and then newline and flush-output function.
+</p>
+<p>
+We do not put any hard restrictions on how your method works, but we suggest you to use genetic programming. In order to implement the genetic programming algorithm, you need to design a suitable initial population and implement the operations of selection, mutation and crossover.
+</p>
+<p>
+<b>Selection</b> selects the individuals that will participate in creating the next generation. Generally, the better individuals should have better chance to be selected. On the other hand, even the worse should be selected with non-zero probability to keep the population diverse and avoid local minima.
+</p>
+<p>
+<b>Mutation</b> is an operation on single individual of the genetic algorithm (program). It slightly randomly modifies the individual. For example, it can substitute one command/test for another, remove or add random command. 
+</p>
+<p>
+<b>Crossover</b> is an operation on two selected individuals, which produces two new individuals as their combination. The basic selection could choose a sub-tree in each program and swap them.
+</p>
+<p>
+The genetic programming evolves programs using the following high level algorithm:
+</p>
+<ol start="1">
+<li>create an initial population</li>
+<li>evaluate all individuals in the population</li>
+<li>if desired quality of the solution is reached then stop</li>
+<li>select individuals participating on the new population</li>
+<li>use mutation, crossover, and copy to create a new population</li>
+<li>goto 2</li>
+</ol>
+
+<p>
+In order to be able to evolve any program, it is important to design the mutation and crossover operations in a way that allows any program to be created from the initial population with non-zero probability.
+</p>
+<p>
+The R5RS norm does not specify any built-in random number generator, which is crucial in genetic programming. You can use the following implementation taken from MIT-Scheme.
+</p>
+<pre>(define (congruential-rng seed)
+  (let ((a 16807 #|(expt 7 5)|#)
+        (m 2147483647 #|(- (expt 2 31) 1)|#))
+    (let ((m-1 (- m 1)))
+      (let ((seed (+ (remainder seed m-1) 1)))
+        (lambda (b)
+          (let ((n (remainder (* a seed) m)))
+            (set! seed n)
+            (quotient (* (- n 1) b) m-1)))))))
+(define random (congruential-rng 12345))
+</pre>
+<p>
+The function random expects one integer argument and returns a random number between 0 and the argument. Each consecutive call of the function returns next random number.
+</p>
+<a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample00.ss"><h3>Example:</h3></a>
+Consider the following part of Scheme program:
+<pre>(define s0
+'((
+(w w w)
+(w 1 w)
+(w w w)
+)
+(1 1) south
+))
+
+(define t0
+'((
+(w w w)
+(w 1 w)
+(w w w)
+)
+(1 1) south
+))
+
+(define s1
+'((
+(w w w)
+(w 1 w)
+(w 0 w)
+(w w w)
+)
+(1 1) west
+))
+
+(define t1
+'((
+(w w w)
+(w 1 w)
+(w 0 w)
+(w w w)
+)
+(1 1) west
+))
+
+(define s2
+'((
+(w w w)
+(w 0 w)
+(w 0 w)
+(w 0 w)
+(w 0 w)
+(w 1 w)
+(w 0 w)
+(w 0 w)
+(w w w)
+)
+(1 1) south
+))
+
+(define t2
+'((
+(w w w)
+(w 0 w)
+(w 0 w)
+(w 0 w)
+(w 0 w)
+(w 1 w)
+(w 0 w)
+(w 0 w)
+(w w w)
+)
+(1 7) south
+))
+</pre>
+Now we call:
+<pre>(evolve `((,s0 ,t0) (,s1 ,t1) (,s2 ,t2)) `(10000 10000 20 20) 10) 
+</pre>
+And we can obtain during some time period (according some algorithm):
+<pre>((0 6 1 0) ((procedure start ())))
+((0 6 1 0) ((procedure 1 ())))
+((0 6 1 0) ((procedure start ())))
+((0 3 8 3) ((procedure 1 ()) (procedure start ((if mark? () (1)) 1 step step step))))
+((0 0 13 14) ((procedure start ((if mark? () (1)) 1 step step step)) (procedure 1 (put-mark get-mark step step step))))
+((0 0 11 14) ((procedure 1 (put-mark get-mark step step step)) (procedure start ((if mark? () (1)) 1 step))))
+((0 0 5 6) ((procedure 1 step) (procedure start (step start))))
+((0 0 3 6) ((procedure start (step start))))
+</pre>
+The last line of the output above has the final importance. 
+If the first two numbers are zeros then the problem was successfuly solved.
+<h3>
+  Example 1 (<a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample01.in">in</a>,
+             <a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample01.out">out</a>),
+  Example 2 (<a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample02.in">in</a>,
+             <a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample02.out">out</a>),
+  Example 3 (<a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample03.in">in</a>,
+             <a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample03.out">out</a>),
+  Example 4 (<a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample04.in">in</a>,
+             <a href="https://cw.felk.cvut.cz/courses/a4b33flp/getdata.php?task=automatic_code_synthesis&amp;item=sample04.out">out</a>)
+</h3>
+
+
+
+</div></body></html>

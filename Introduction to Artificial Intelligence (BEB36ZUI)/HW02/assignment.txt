@@ -1,0 +1,45 @@
+Task 2 - CS - Malované křížovky
+Zadání
+Vaším úkolem je napsat algoritmus, který vyřeší malovanou křížovku. Malované křížovky jsou logické hlavolamy, při kterých je kolem mřížky umístněná legenda s čísly pomocí nichž lze vytvořit obrázek. Každé číslo v legendě určuje počet za sebou následujících vyplněných čtverečků barvy, která přísluší danému číslu. Platí následující pravidla: (1) mezi jednotlivými bloky čtverečků vyplněných stejnou barvou je vždy minimálně jeden prázdný, (2) mezi čtverečky, které jsou vyplněny různou barvou nemusí být prázdný čtvereček, (3) pořadí čísel v legendě určuje pořadí bloků.
+
+Pokyny k vypracování
+Vstup
+Program by měl číst ze standardního vstupu, vstup má následující formát:
+
+přičemž každá podmínka má tvar
+
+kde položka “color” se vztahuje k následujícímu číslu a má formát znaku, který reprezentuje barvu, kterou při vykřeslování použijete (např. #). Položky “number” označují velikost daného bloku.
+
+Příklady vstupu: csp_example.txt, input.txt, krtkek.txt, dino.txt
+
+Příklady výstupu: csp_example.txt.out input.txt.out krtek.txt.out, dino.out.txt
+
+Výstup
+Obrázek vypište na standardní výstup.
+Obrázek vykreslujte po řádcích - pro plné políčko vypište znak příslušné barvy, pro prázdné políčko vypište _.
+Pokud je výsledných obrázků více, oddělte je prázdnou řádkou.
+Pokud řešení neexistuje, vypište “null”.
+Postup
+Stáhněte si připravený balíček, kde je pro vás připravena struktura programu, kterou budete doplňovat. Jako první se volá CSPMain.main(), ve kterém se načte vstup pomocí InputLoader.loader(), kde zároveň definujete jak váš CSP problém vypadá, pomocí třídy Problem. Nakonec se instance problem předá do Solver.solve(), která inicializuje algoritmus, zavolá AC3 (pokud se rozhodnete ji implementovat) a nakonec spustí funkci backtrack(). Poté vrátíte výsledek a vypíšete ve funkci main(). Všechny třídy a metody budete muset nejdříve doplnit. Struktura není striktně rigidní, můžete měnit definice tříd, pokud máte dobrý důvod. Nutné je pouze zachovat CSPMain.main() jako hlavní metodu programu.
+
+Promyslete si zejména způsob formalizace – co zvolit jako proměnnou, jak budou vypadat podmínky a zda půjde jednoduše implementovat algoritmy hranové konzistence. Začněte s jednoduchým algoritmem backtracking a do něj můžete implementovat AC3, nebo Most-Constrained-Variable heuristiku.
+
+Ke komentáři třídy CSPMain prosím vložte krátký popis vaší formalizace – jaké jste zvolili proměnné, domény a jaké jsou zde omezení.
+
+Vaše implementace bude automaticky vyhodnocena na 6 problémech, s celkovým časovým limitem 15 minut.
+
+Ohodnocení
+Za úkol můžete získat maximálně 12 bodů:
+
+4 body za správnou implementaci (vyhodnoceno automaticky)
+4 body za správnou CSP implementaci
+2 body za správnou AC3 implementaci
+1 body za správnou Most-Constrained-Variable heuristiku
+1 bod za krátký popis vašeho řešení
+Nehodnotí se rychlost řešení.
+
+Detaily implementace
+Vaše třídy budou v package student
+Hlavní třída musí být CSPMain, která bude implementovat metodu main
+Váš algoritmus musí vypsat všechna řešení
+Odevzdejte zabalenou balíčkovou strukturu se všemi Vašimi třídami

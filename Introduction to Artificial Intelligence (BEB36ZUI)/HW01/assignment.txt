@@ -1,0 +1,60 @@
+Task 1 - CS - Path Planning
+Vytvořte algoritmus, který na silničním grafu Spojeného království Velké Británie a Severního Irska (UK) najde cestu mezi dvěma zadanými křižovatkami.
+
+Zadání
+Vstup:
+
+Graf silniční sítě UK
+Hrany grafu obsahují délku hrany a maximální povolenou rychlost
+Uzly jsou označeny jedinečným identifikátorem ID
+Počáteční uzel v grafu
+Cílový uzel v grafu
+Výstup:
+
+Cesta mezi počátečním a cílovým uzlem
+Kritéria kvality, seřazená podle klesající priority:
+
+Algoritmus splňuje všechny body zadání (pojmenování a umístění tříd, používání poskytnutých struktur a použití naší metody add() v open listu - viz níže)
+Nalezená cesta je korektní (vede z počátečního do cílového uzlu a je spojitá - t.j. dvě po sobě jdoucí hrany mají společný vrchol a hrany jsou seřazeny ve správném pořadí).
+Nalezená cesta minimalizuje čas přepravy automobilem mezi počátečním a cílovým uzlem
+Počet expandovaných uzlů je minimální
+Hodnocení
+
+Algoritmus splňuje všechny body zadání.
+Nalezená cesta je korektní (vede z počátečního do cílového uzlu a je spojitá - t.j. dvě po sobě jdoucí hrany mají společný vrchol a hrany jsou seřazeny ve správném pořadí). [+1b]
+Nalezená cesta minimalizuje čas přepravy automobilem mezi počátečním a cílovým uzlem [+1b]
+Počet expandovaných uzlů [+0-2b]
+Odevzdání
+Datum/čas: 10/03/2018 23:59:59
+Obsah: zabalený obsah adresář - java package student - Váš archiv bude obsahovat pouze soubory *.java, žádné další podsložky. Všechny zdrojové soubory musí být uvozené pomocí package student;.
+Detaily implementace
+Použijte kódovou bázi dostupnou zde
+V package student doplňte implementaci třídy Planner, která implementuje rozhraní PlannerInterface
+V package student vytvořte vlastní třídu OpenList, která extenduje třídu AbstractOpenList. Pro přidávání položek do OpenList potom volejte (jen a pouze) metodu add(T item)
+Pokud modifikujete nějaký prvek v OpenList (tj. už jste ho do OpenListu přidali dříve, jen přepočítaváte jeho cost), potom metodu add nemusíte (ale můžete - s nevýhodou navýšení Counteru) použít.
+Algoritmus vrátí null, pokud cesta neexistuje
+Pomocný kód
+Třída RoadGraph vám poskytuje přístup ke grafu a obsahuje sadu metod, pomocí kterých se můžete po grafu pohybovat.
+Třída GraphEdge obsahuje (mimo jiné) metody getAllowedMaxSpeedInKmph() a getLengthInMetres(), které vrací maximální povolenou rychlost na hraně v kilometrech resp. délku hrany v metrech.
+Třída Utils Vám poskytuje metriku pro počítání vzdálenosti mezi libovolnými dvěma uzly v grafu. Při použití jiné metriky nezaručujeme shodu Vašeho nejlepšího řešení s naším nejlepším řešením!
+Třída PlannerExecutor poskytuje tělo programu, na kterém můžete testovat Váš algoritmus. Třída umí plán zapsat do KML souboru, který si můžete prohlédnout v Google Earth. Dále vypíše délku plánu a čas přepravy po dané cestě (můžete nepřímo přepoužít tento kód pro vygenerování celého grafu).
+Drobná doporučení
+Pro porovnávání objektů v Javě slouží metoda equals(), nikoliv == (rovnítka porovnávají, zda jde o stejnou instanci objektu)
+Předaný objekt RoadGraph má být immutable - pokud jej nějak modifikujete, rozbijete si svá řešení následných úloh. Váš kód je spuštěn několikrát se stejnou instancí objektu RoadGraph, ale s jinými počátečními a cílovými uzly.
+Používejte správné datové struktury pro správné věci. Myslete na časovou složitost. Nevymýšlejte kolo a používejte třídy v Javě již implementované.
+Ukázkové výsledky
+Řešení 1
+Origin node ID = 13823646
+Destination node ID = 188755778
+Plan length [km]: 932.8542488743733
+Time to travel [hrs]: 12.084881006921961
+Řešení 2
+Origin node ID = 26746953
+Destination node ID = 1037726044
+Plan length [km]: 664.3940259558422
+Time to travel [hrs]: 8.002850863827378
+Řešení 3
+Origin node ID = 243081231
+Destination node ID = 21728749
+Plan length [km]: 560.2105619356079
+Time to travel [hrs]: 7.149357704368445

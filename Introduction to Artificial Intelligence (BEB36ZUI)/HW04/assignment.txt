@@ -1,0 +1,408 @@
+The goal of this assignment is to find optimal decision policy of an agent maximizing its reward in a GridWorld MDP problem (see slides or Wikipedia for details). A GridWorld consists of a rectangular grid of 
+m
+×
+n
+ cells. The cells are described using coordinate system with 
+[
+0
+,
+0
+]
+ in top left corner. An agent can make for different actions — it can go one cell north, east, south, and west from the cell it is occupying. The actions are not deterministic and the intended action will be executed only with probability 
+p
+ (action_proba) and some other actions will be executed with probability 
+1
+−
+p
+. More specifically, only the actions that are neighbouring the intended cardinal direction might be executed instead and each of them with uniform probability, i.e. if the agent's intended action is north, it will be executed with probability 
+p
+ and action east or west will be executed instead with probability 
+1
+−
+p
+2
+. Each action has an associated cost 
+c
+ (action_cost), which, for the purposes of this assignment, is identical for each action. This cost is applied only when the cell where the action would have ended has no associated reward — if the cell 
+[
+i
+,
+j
+]
+ has an associated reward 
+r
+i
+,
+j
+, the reward overrides the cost.
+
+In all the predefined worlds, the cells with defined reward are also set be terminal states where the agent ends when he reaches them. It is recommend for your experiments to keep the set of reward states the same as the set of the terminal state. A reward (or a cost if it is negative) is obtained if the associated cell is reached by the agent.
+
+Algorithms
+While the MDPs can be solved by both linear programming and dynamic programming, this task focuses on the latter — namely, only two variants of dynamic programming for solving the MDP are needed: value iteration and policy iteration. The dynamic programming approach consists of iterative estimation of the values of individual states 
+V
+(
+s
+)
+ and choosing the best policy 
+π
+(
+s
+)
+ for deciding for action 
+a
+ from the set of actions 
+A
+ for each state 0 
+s
+ from the set of states 
+S
+.
+
+First, the action are evaluated using known valuation of states 
+V
+n
+−
+1
+(
+s
+)
+ and the transitional probabilities 
+P
+(
+s
+′
+|
+a
+,
+s
+)
+ where 
+s
+′
+ is the target state, 
+s
+ is the current state, and 
+a
+ is the executed action:
+
+Q
+n
+(
+s
+,
+a
+)
+=
+R
+(
+s
+)
++
+∑
+s
+′
+∈
+S
+ 
+P
+(
+s
+′
+|
+a
+,
+s
+)
+γ
+V
+n
+−
+1
+(
+s
+′
+)
+  
+(1)
+ 
+where 
+R
+(
+s
+)
+ is the reward for going from state 
+s
+ and 
+γ
+∈
+[
+0
+,
+1
+]
+ is the discount factor.
+
+The optimal policy 
+π
+n
+(
+s
+)
+ is chosen as
+π
+n
+(
+s
+)
+=
+a
+r
+g
+m
+a
+x
+a
+∈
+A
+Q
+n
+(
+s
+,
+a
+)
+  
+(2)
+ 
+and finally, the valuation of states 
+V
+n
+ is recomputed:
+
+V
+n
+=
+R
+(
+s
+)
++
+∑
+s
+′
+∈
+S
+ 
+P
+(
+s
+′
+|
+π
+n
+(
+s
+)
+,
+s
+)
+γ
+V
+n
+−
+1
+(
+s
+′
+)
+  
+(3)
+ 
+Value iteration
+The value iteration algorithm skips explicitly computing the optimal policy and consists of a single step repeated until convergence criterion is met:
+V
+n
+=
+max
+a
+∈
+A
+ 
+(
+R
+(
+s
+)
++
+∑
+s
+′
+∈
+S
+ 
+P
+(
+s
+′
+|
+a
+,
+s
+)
+γ
+V
+n
+−
+1
+(
+s
+′
+)
+)
+  
+(4)
+ 
+Policy iteration
+The policy iteration consists of two steps — computation the optimal policy 
+π
+n
+(
+s
+)
+ and evaluation of states 
+V
+n
+(
+s
+)
+ given the policy 
+π
+n
+(
+s
+)
+. The evaluation of states for given policy might be either computed solving set of equations or iteratively similarly as in the value iteration. The assignment uses the iterative version which consists of repeated computation of 
+Q
+n
+(
+s
+,
+a
+)
+ and 
+V
+n
+ until the 
+V
+n
+ meets the convergence criterion.
+
+Implementation
+There are several implementation details that are worth. First, while, the functions are defined as multidimensional arrays — 
+R
+(
+s
+)
+ is replaced by an array 
+R
+ of shape 
+|
+S
+|
+ where 
+R
+[
+s
+]
+=
+R
+(
+s
+)
+, 
+P
+(
+s
+′
+|
+a
+,
+s
+)
+ is replaced by 
+P
+ of shape 
+|
+S
+|
+×
+|
+A
+|
+×
+|
+S
+|
+ where 
+P
+[
+s
+,
+a
+,
+s
+′
+]
+=
+P
+(
+s
+′
+|
+a
+,
+s
+)
+. Also 
+V
+n
+(
+s
+)
+ is saved as an array 
+V
+n
+ of shape 
+|
+S
+|
+ and 
+Q
+n
+(
+s
+,
+a
+)
+ as 
+Q
+n
+ of shape 
+|
+S
+|
+×
+|
+A
+|
+.
+
+The set of states 
+S
+ consists of all cells from the grid and a terminal sink state which is an added state that cannot be left (all action with lead back to it with probability 1) and which has no reward for reaching it. All action from the states on the grid that are considered to be terminal leads to the sink state to prevent repeated application of rewards that are associated with such states.
+
+Environment
+The task is to be implemented and the provided codes are in python 3.6. The other necessary packages are NumPy, matplotlib, seaborn.
+
+It is recommended to use Anaconda distribution which also contains a package manager which allows to install many pre-compiled packages (which is especially beneficial when using Windows as it is often problematic to compile packages there).
